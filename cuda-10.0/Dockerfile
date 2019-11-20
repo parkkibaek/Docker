@@ -7,7 +7,11 @@ RUN apt-get update && apt-get install -y \
     sudo \
     git \
     bzip2 \
-   libx11-6 \
+    libx11-6 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    vim \
  && rm -rf /var/lib/apt/lists/*
 
 # Create a working directory
@@ -70,4 +74,3 @@ RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
 RUN conda install -y -c menpo opencv3=3.1.0 \
  && conda clean -ya
 
-RUN apt-get update && apt-get -y install vim
